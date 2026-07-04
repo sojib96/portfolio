@@ -49,7 +49,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach(el => revealObserver.observe(el));
 
 /* ===== STAT COUNTER ===== */
-const statNumbers = document.querySelectorAll('.stat-number');
+const statNumbers = document.querySelectorAll('.hero-stat-number');
 
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

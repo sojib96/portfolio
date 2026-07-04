@@ -231,13 +231,14 @@ ul {
 
 /* ===== HERO ===== */
 .hero {
-  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: 140px 0 40px;
+  min-height: 100vh;
 }
 
 /* Animated tech grid background */
@@ -280,11 +281,57 @@ ul {
   50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
 }
 
-.hero-content {
+.hero-inner {
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 680px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+}
+
+.hero-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-stats {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-left: 48px;
+  border-left: 1px solid var(--border);
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.hero-stat-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.hero-stat-suffix {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-top: -8px;
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 /* Status badge */
@@ -428,59 +475,22 @@ ul {
   50% { opacity: 0.3; }
 }
 
-/* ===== STATS STRIP ===== */
-.stats-section {
-  background: var(--surface);
-  padding: 48px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  text-align: center;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.stat-number {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1;
-}
-
-.stat-item .stat-suffix {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  margin-top: -12px;
-}
-
-.stat-label {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
 /* ===== TECH MARQUEE ===== */
-.tech-marquee-section {
+.tech-marquee-section,
+.hero-tech-marquee {
   width: 100%;
   background: var(--bg-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 20px 0;
   overflow: hidden;
+}
+
+.hero-tech-marquee {
+  position: relative;
+  z-index: 1;
+  margin-top: 64px;
+  border-bottom: none;
 }
 
 .marquee-track {
@@ -972,14 +982,30 @@ ul {
     display: block;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+  .hero-inner {
+    flex-direction: column;
+    gap: 40px;
   }
 
-  .stat-number,
-  .stat-item .stat-suffix {
-    font-size: 2rem;
+  .hero-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 0;
+    border-left: none;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    width: 100%;
+  }
+
+  .hero-stat {
+    flex: 1;
+    min-width: 100px;
+    align-items: center;
+  }
+
+  .hero-tech-marquee {
+    margin-top: 40px;
   }
 
   .edu-extra {
@@ -996,16 +1022,12 @@ ul {
 }
 
 @media (max-width: 480px) {
-  .stats-grid {
-    gap: 24px;
+  .hero-stat-number,
+  .hero-stat-suffix {
+    font-size: 1.5rem;
   }
 
-  .stat-number,
-  .stat-item .stat-suffix {
-    font-size: 1.75rem;
-  }
-
-  .stat-label {
+  .hero-stat-label {
     font-size: 0.7rem;
   }
 }
