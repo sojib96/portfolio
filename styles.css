@@ -20,7 +20,7 @@
   --accent-glow: rgba(217, 119, 6, 0.15);
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --max-width: 800px;
+  --max-width: 1100px;
   --header-h: 64px;
   --radius: 12px;
   --radius-sm: 8px;
@@ -476,7 +476,7 @@ ul {
 /* ===== ABOUT ===== */
 .about-content {
   font-size: 1rem;
-  max-width: 680px;
+  max-width: 720px;
 }
 
 .about-content p {
@@ -843,7 +843,7 @@ ul {
   font-size: 1.05rem;
   color: var(--text-muted);
   margin-bottom: 32px;
-  max-width: 480px;
+  max-width: 600px;
 }
 
 .contact-links {
