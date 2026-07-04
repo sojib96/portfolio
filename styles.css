@@ -237,7 +237,7 @@ ul {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 140px 0 40px;
+  padding: 100px 0 40px;
   min-height: 100vh;
 }
 
@@ -477,7 +477,7 @@ ul {
 
 /* ===== TECH MARQUEE ===== */
 .tech-marquee-section,
-.hero-tech-marquee {
+.top-marquee {
   width: 100%;
   background: var(--bg-alt);
   border-top: 1px solid var(--border);
@@ -486,11 +486,12 @@ ul {
   overflow: hidden;
 }
 
-.hero-tech-marquee {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 48px;
-  border-top: none;
+.top-marquee {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  z-index: 99;
+  border-top: 1px solid var(--border);
 }
 
 .marquee-track {
@@ -1004,8 +1005,8 @@ ul {
     align-items: center;
   }
 
-  .hero-tech-marquee {
-    margin-top: 40px;
+  .top-marquee {
+    padding: 14px 0;
   }
 
   .edu-extra {
