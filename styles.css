@@ -357,6 +357,7 @@ ul {
 .hero-stat[style*="--i:2"] { animation-delay: 0.3s; }
 .hero-stat[style*="--i:3"] { animation-delay: 0.4s; }
 .hero-stat[style*="--i:4"] { animation-delay: 0.5s; }
+.hero-stat[style*="--i:5"] { animation-delay: 0.6s; }
 
 @keyframes stat-fade-in {
   0% { opacity: 0; transform: translateX(-12px); }
