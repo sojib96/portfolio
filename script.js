@@ -2,107 +2,80 @@
   'use strict';
 
   /* ==========================================
-     Scroll reveal
+     Scroll Reveal — Intersection Observer
      ========================================== */
-  const reveals = document.querySelectorAll('.reveal');
+  const revealElements = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver(
+  const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
   );
 
-  reveals.forEach((el) => observer.observe(el));
+  revealElements.forEach((el) => revealObserver.observe(el));
 
   /* ==========================================
-     Header scroll state
+     Header — scroll state
      ========================================== */
   const header = document.getElementById('header');
-  let ticking = false;
 
   const updateHeader = () => {
-    header.classList.toggle('scrolled', window.scrollY > 50);
+    header.classList.toggle('scrolled', window.scrollY > 60);
   };
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => { updateHeader(); ticking = false; });
-      ticking = true;
-    }
-  }, { passive: true });
-
+  window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
 
   /* ==========================================
-     Active nav link
+     Mobile Nav Toggle
      ========================================== */
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
 
-  if (sections.length && navLinks.length) {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navLinks.forEach((link) => {
-              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-            });
-          }
-        });
-      },
-      { threshold: 0.25, rootMargin: '-64px 0px 0px 0px' }
-    );
-
-    sections.forEach((s) => sectionObserver.observe(s));
-  }
-
-  /* ==========================================
-     Mobile nav toggle
-     ========================================== */
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('navLinks');
-
-  const closeMenu = () => {
-    menu.classList.remove('active');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
-
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
-    toggle.setAttribute('aria-expanded', expanded);
-    menu.classList.toggle('active');
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true' ? false : true;
+    navToggle.setAttribute('aria-expanded', expanded);
+    navLinks.classList.toggle('active');
     document.body.style.overflow = expanded ? 'hidden' : '';
   });
 
-  menu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeMenu);
+  /* Close nav on link click (mobile) */
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
   });
 
+  /* Close nav on Escape */
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menu.classList.contains('active')) closeMenu();
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
   });
 
   /* ==========================================
-     Smooth scroll
+     Smooth scroll for anchor links (fallback)
      ========================================== */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
-      const href = anchor.getAttribute('href');
-      if (href === '#') return;
-      const target = document.querySelector(href);
+      const targetId = anchor.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        const offset = parseInt(getComputedStyle(document.documentElement).scrollPaddingTop, 10);
-        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+        const headerOffset = parseInt(getComputedStyle(document.documentElement).scrollPaddingTop, 10);
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
       }
     });
   });
