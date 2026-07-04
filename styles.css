@@ -308,18 +308,11 @@ ul {
   justify-content: center;
 }
 
-.avatar {
+.avatar-img {
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #b45309);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 3.25rem;
-  font-weight: 700;
-  color: #fff;
+  object-fit: cover;
   position: relative;
   z-index: 1;
 }
@@ -388,6 +381,7 @@ ul {
   gap: 12px;
   margin-bottom: 28px;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .hero-location {
@@ -430,6 +424,7 @@ ul {
   gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  justify-content: flex-start;
 }
 
 .hero-interests span {
@@ -1031,6 +1026,7 @@ ul {
   .hero-left {
     width: 100%;
     flex-direction: row;
+    align-items: center;
     gap: 24px;
   }
 
@@ -1040,10 +1036,9 @@ ul {
     flex-shrink: 0;
   }
 
-  .avatar {
+  .avatar-img {
     width: 105px;
     height: 105px;
-    font-size: 2.75rem;
   }
 
   .photo-ring {
