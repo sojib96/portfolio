@@ -489,8 +489,8 @@ ul {
 .hero-tech-marquee {
   position: relative;
   z-index: 1;
-  margin-top: 64px;
-  border-bottom: none;
+  margin-bottom: 48px;
+  border-top: none;
 }
 
 .marquee-track {
