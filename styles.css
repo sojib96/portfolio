@@ -473,6 +473,52 @@ ul {
   font-weight: 500;
 }
 
+/* ===== TECH MARQUEE ===== */
+.tech-marquee-section {
+  width: 100%;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 0 24px;
+  white-space: nowrap;
+}
+
+.marquee-content span {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+.marquee-content span::before {
+  content: '//';
+  color: var(--accent);
+  margin-right: 12px;
+  opacity: 0.5;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ===== ABOUT ===== */
 .about-content {
   font-size: 1rem;
