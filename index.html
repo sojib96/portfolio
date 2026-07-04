@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sojib — SQA Engineer & Automation Architect. Portfolio showcasing software quality assurance, test automation, and testing framework expertise.">
-  <meta name="keywords" content="SQA, software quality assurance, test automation, Playwright, Selenium, portfolio">
-  <meta property="og:title" content="Sojib · SQA Engineer">
-  <meta property="og:description" content="SQA Engineer & Automation Architect — building test infrastructure that ships confidence.">
+  <meta name="description" content="Sojib — SQA Engineer & Automation Architect. Building test infrastructure that ships confidence.">
+  <meta property="og:title" content="Sojib · SQA Engineer & Automation Architect">
+  <meta property="og:description" content="Building test infrastructure that ships confidence.">
   <meta property="og:type" content="website">
   <title>Sojib · SQA Engineer & Automation Architect</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,21 +27,31 @@
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
         <span class="hamburger"></span>
       </button>
     </nav>
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="hero" class="hero">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-content container">
+        <div class="status-badge reveal">
+          <span class="pulse-dot"></span>
+          Open for opportunities
+        </div>
         <p class="hero-greeting reveal">Hi, I'm</p>
         <h1 class="reveal">Sojib</h1>
-        <p class="hero-title reveal">SQA Engineer <span class="accent">&</span> Automation Architect</p>
+        <p class="hero-title reveal">SQA Engineer <span class="accent">&amp;</span> Automation Architect</p>
         <p class="hero-desc reveal">I build test infrastructure that gives teams the confidence to ship fast — without breaking things.</p>
         <div class="hero-actions reveal">
-          <a href="#contact" class="btn btn-primary">Get in touch</a>
+          <a href="#contact" class="btn btn-primary">
+            <span>Get in touch</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
           <a href="#projects" class="btn btn-outline">See my work</a>
         </div>
       </div>
@@ -54,6 +63,35 @@
       </div>
     </section>
 
+    <!-- STATS STRIP -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" data-target="2">0</span>
+            <span class="stat-suffix">+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="300">0</span>
+            <span class="stat-suffix">+</span>
+            <span class="stat-label">Automated Tests</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="7">0</span>
+            <span class="stat-suffix">+</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-suffix"></span>
+            <span class="stat-label">Frameworks Built</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
     <section id="about" class="section">
       <div class="container">
         <h2 class="section-title reveal">About</h2>
@@ -62,15 +100,36 @@
           <p>Over the last two years I've built automation frameworks from scratch for healthcare platforms, designed regression suites that guard multi-module HR systems, and learned that great testing isn't about catching every bug &mdash; it's about giving teams the confidence to ship without fear. I work across the full stack of quality: test architecture, automated suites, API validation, and cross-functional collaboration inside Agile workflows.</p>
           <p>When I'm not designing test infrastructure, I publish research on deep learning, solve problems on LeetCode, and explore open-source automation tooling.</p>
         </div>
+        <div class="terminal-card reveal">
+          <div class="terminal-header">
+            <span class="terminal-dot" style="background:#ff5f56"></span>
+            <span class="terminal-dot" style="background:#ffbd2e"></span>
+            <span class="terminal-dot" style="background:#27c93f"></span>
+            <span class="terminal-title">sojib@portfolio ~/status</span>
+          </div>
+          <div class="terminal-body">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">cat profile.snapshot</span>
+            <div class="terminal-output">
+              <span>{</span>
+              <span class="ident">  "role": "SQA Engineer",</span>
+              <span class="ident">  "focus": "Test Automation &amp; API Quality",</span>
+              <span class="ident">  "status": <span class="t-green">"Open to opportunities"</span>,</span>
+              <span class="ident">  "location": "Dhaka, Bangladesh",</span>
+              <span class="ident">  "tools": ["Playwright", "Selenium", "REST Assured"]</span>
+              <span>}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience" class="section section-alt">
       <div class="container">
         <h2 class="section-title reveal">Experience</h2>
         <div class="timeline" role="list">
-
-          <article class="timeline-item reveal" role="listitem">
+          <article class="timeline-item reveal" role="listitem" style="--i:0">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-card">
               <div class="timeline-header">
@@ -88,8 +147,7 @@
               </ul>
             </div>
           </article>
-
-          <article class="timeline-item reveal" role="listitem">
+          <article class="timeline-item reveal" role="listitem" style="--i:1">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-card">
               <div class="timeline-header">
@@ -106,8 +164,7 @@
               </ul>
             </div>
           </article>
-
-          <article class="timeline-item reveal" role="listitem">
+          <article class="timeline-item reveal" role="listitem" style="--i:2">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-card">
               <div class="timeline-header">
@@ -124,82 +181,73 @@
               </ul>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" class="section">
       <div class="container">
         <h2 class="section-title reveal">Skills</h2>
         <div class="skills-grid reveal">
-
           <div class="skill-group">
             <h3 class="skill-group-title">Programming Languages</h3>
             <ul class="skill-tags">
               <li>Java</li><li>Python</li><li>JavaScript</li>
             </ul>
           </div>
-
           <div class="skill-group">
             <h3 class="skill-group-title">Test Automation</h3>
             <ul class="skill-tags">
               <li>Selenium</li><li>Playwright</li><li>TestNG</li><li>Cucumber</li><li>Maven</li><li>Allure</li>
             </ul>
           </div>
-
           <div class="skill-group">
             <h3 class="skill-group-title">API &amp; Performance</h3>
             <ul class="skill-tags">
               <li>Postman</li><li>REST Assured</li><li>JMeter</li>
             </ul>
           </div>
-
           <div class="skill-group">
             <h3 class="skill-group-title">Mobile &amp; Cross-Platform</h3>
             <ul class="skill-tags">
               <li>Appium</li><li>BrowserStack</li>
             </ul>
           </div>
-
           <div class="skill-group">
             <h3 class="skill-group-title">CI/CD &amp; DevOps</h3>
             <ul class="skill-tags">
               <li>Jenkins</li><li>Docker</li><li>Git</li>
             </ul>
           </div>
-
           <div class="skill-group">
             <h3 class="skill-group-title">Database</h3>
             <ul class="skill-tags">
               <li>MySQL</li><li>Query Optimization</li><li>Data Validation</li>
             </ul>
           </div>
-
           <div class="skill-group">
             <h3 class="skill-group-title">Manual Testing</h3>
             <ul class="skill-tags">
               <li>Test Planning</li><li>Functional</li><li>Regression</li><li>Smoke</li><li>Exploratory</li><li>UAT</li><li>Defect Management</li>
             </ul>
           </div>
-
           <div class="skill-group">
             <h3 class="skill-group-title">Tools &amp; Methodologies</h3>
             <ul class="skill-tags">
               <li>Jira</li><li>ClickUp</li><li>Agile / Scrum</li>
             </ul>
           </div>
-
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="section section-alt">
       <div class="container">
         <h2 class="section-title reveal">Projects</h2>
         <div class="projects-grid">
-
-          <article class="project-card reveal">
+          <article class="project-card reveal" style="--i:0">
             <div class="project-card-header">
               <h3>Bookstore API Automation</h3>
               <span class="project-badge">Framework</span>
@@ -209,8 +257,7 @@
               <span>Java</span><span>Rest-Assured</span><span>Cucumber</span><span>TestNG</span><span>Maven</span><span>Docker</span><span>Jenkins</span><span>Allure</span>
             </div>
           </article>
-
-          <article class="project-card reveal">
+          <article class="project-card reveal" style="--i:1">
             <div class="project-card-header">
               <h3>SauceDemo Web Automation</h3>
               <span class="project-badge">Framework</span>
@@ -220,8 +267,7 @@
               <span>Java</span><span>Selenium</span><span>TestNG</span><span>Maven</span><span>Allure</span><span>Log4j2</span><span>Docker</span><span>Jenkins</span>
             </div>
           </article>
-
-          <article class="project-card reveal">
+          <article class="project-card reveal" style="--i:2">
             <div class="project-card-header">
               <h3>AccuWeather UI Automation</h3>
               <span class="project-badge">Automation</span>
@@ -231,8 +277,7 @@
               <span>Java</span><span>Selenium</span><span>Aquality</span><span>Cucumber</span><span>Maven</span><span>Docker</span><span>Jenkins</span><span>Allure</span>
             </div>
           </article>
-
-          <article class="project-card reveal">
+          <article class="project-card reveal" style="--i:3">
             <div class="project-card-header">
               <h3>Wikipedia Modular Test Suite</h3>
               <span class="project-badge">Automation</span>
@@ -242,8 +287,7 @@
               <span>Java</span><span>Selenium</span><span>TestNG</span><span>Maven</span><span>Docker</span><span>Jenkins</span><span>Allure</span><span>BrowserStack</span>
             </div>
           </article>
-
-          <article class="project-card reveal">
+          <article class="project-card reveal" style="--i:4">
             <div class="project-card-header">
               <h3>OpenCart Manual Testing</h3>
               <span class="project-badge">Manual QA</span>
@@ -253,8 +297,7 @@
               <span>Test Planning</span><span>RTM</span><span>Bug Reports</span><span>Exploratory</span>
             </div>
           </article>
-
-          <article class="project-card reveal">
+          <article class="project-card reveal" style="--i:5">
             <div class="project-card-header">
               <h3>Package Management API</h3>
               <span class="project-badge">Backend</span>
@@ -264,8 +307,7 @@
               <span>Python</span><span>Django</span><span>DRF</span><span>JWT</span><span>SQLite</span>
             </div>
           </article>
-
-          <article class="project-card reveal">
+          <article class="project-card reveal" style="--i:6">
             <div class="project-card-header">
               <h3>Jersey Fidelity E-commerce</h3>
               <span class="project-badge">Full Stack</span>
@@ -275,15 +317,14 @@
               <span>Python</span><span>Django</span><span>HTML</span><span>CSS</span><span>Bootstrap</span>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
+    <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="container">
         <h2 class="section-title reveal">Education</h2>
-
         <div class="edu-card reveal">
           <div class="edu-main">
             <h3>BSc in Computer Science &amp; Engineering</h3>
@@ -307,10 +348,10 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section section-alt">
       <div class="container">
         <h2 class="section-title reveal">Contact</h2>
